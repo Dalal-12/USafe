@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Webcam Video Stream</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Webcam Video Stream</h1>
+    <div class="row">
+      <div class="col-8">
+        <video id="videoElement" autoplay class="w-100"></video>
+
+      </div>
+      <div class="col">
+
+        <div id="message" class="d-none">
+          <!-- start for FAINT DECTECT -->
+
+          <h3 class="text-danger"> Faint Detected !!</h3>
+          <div class="alert alert-danger" role="alert">
+            Fainting Case Detected!
+          </div>
+
+          <!-- end -->
+        </div>
+
+        <div id="message-ok" class="d-block">
+          <!-- start for OK -->
+
+          <h3 class="text-green"> Everything is OK</h3>
+          <div class="alert alert-success" role="alert">
+            All Things is OK 
+          </div>
+
+          <!-- end -->
+        </div>
+
+      </div>
+    </div>
+  </div>
+  
+  
+
+  <canvas id="canvas" style="visibility:hidden;"> </canvas>
+
+
+
+
+  <!-- <audio style="visibility: hidden;" id="sound">
+    <source src="/static/alarm.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+  </audio> -->
+
+  {% csrf_token %}
+  <script>
+
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+
+      const width = 320;    // We will scale the photo width to this
+      const height = 320;     // This will be computed based on the input stream
+
+      let streaming = false;
+      let canvas = null;
+      let photo = document.getElementById("photo");
+      let startbutton = null;
+
+      canvas = document.getElementById('canvas');
+      const video = document.getElementById('videoElement');
+
+
+      // video.setAttribute("width", width);
+      // video.setAttribute("height", height);
+      canvas.setAttribute("width", width);
+      canvas.setAttribute("height", height);
+
+      video.addEventListener(
+        "canplay",
+        (ev) => {
+          if (!streaming) {
+            height2 = (video.videoHeight / video.videoWidth) * width;
+
+            // video.setAttribute("width", width);
+            // video.setAttribute("height", height2);
+            canvas.setAttribute("width", width);
+            canvas.setAttribute("height", height);
+            streaming = true;
+
+          }
+        },
+        false,
+      );
+      function clearphoto() {
+        const context = canvas.getContext("2d");
+        context.fillStyle = "#AAA";
+        context.fillRect(0, 0, canvas.width, canvas.height);
+        const data = canvas.toDataURL("image/png");
+        //photo.setAttribute("src", data);
+      }
+      function takepicture() {
+        const context = canvas.getContext("2d");
+        if (width && height) {
+          canvas.width = width;
+          canvas.height = height;
+          context.drawImage(video, 0, 0, width, height);
+          const data = canvas.toDataURL("image/png");
+          //photo.setAttribute("src", data);
+          //start
+          // Capture the canvas data as a Blob
+          canvas.toBlob(blob => {
+            const formData = new FormData();
+
+            formData.append('image', blob, 'image.jpg');
+
+            // Send the image data to the server using fetch with multipart/form-data
+            fetch('/fainted/', {
+              method: 'POST',
+              body: formData,
+            })
+              .then(response => {
+                // Handle response from the server
+                console.log(response)
+                return response.json()
+              })
+              .then(data => {
+                console.log("data", data)
+                if (data.is_fainted) {
+                  document.getElementById("message-ok").className = "d-none";
+                  document.getElementById("message").className = "d-block";
+                  var audio = new Audio('/static/audio/alarm2.mp3');
+                  audio.play();
+                } else {
+                  document.getElementById("message").className = "d-none";
+                  document.getElementById("message-ok").className = "d-block";
+                }
+                window.setTimeout(() => { takepicture(); }, 1000)
+              })
+              .catch(error => {
+                // Handle errors
+                console.error('Error uploading image:', error);
+              });
+          }, 'image/jpeg', 0.8);
+
+          //end
+
+        } else {
+          clearphoto();
+        }
+      }
+      window.setTimeout(() => { takepicture(); }, 1000)
+      if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia({ video: true })
+          .then(function (stream) {
+            video.srcObject = stream;
+            video.play();
+          })
+          .catch(function (error) {
+            console.error('getUserMedia error:', error);
+          });
+      } else {
+        console.error('getUserMedia is not supported');
+      }
+    });
+  </script>
+</body>
+
+</html>

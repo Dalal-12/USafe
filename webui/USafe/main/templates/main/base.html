@@ -1,0 +1,562 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title> USafe </title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{%static 'css/bootstrap.css' %}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- font awesome style -->
+  <link href="{%static 'css/font-awesome.min.css'%}" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="{%static 'css/style.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{%static 'css/responsive.css' %}" rel="stylesheet" />
+
+</head>
+<body>
+
+  <div class="hero_area">
+
+    <div class="hero_bg_box">
+      <div class="bg_img_box">
+        <img src="{%static 'images/hero-bg.png' %}" alt="">
+      </div>
+    </div>
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <a class="navbar-brand " href="home.html">
+            <span>
+             USafe
+            </span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  ">
+              <li class="nav-item active ">
+                <a class="nav-link" href="home_view.html">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item ">
+                <a class="nav-link" href=" #slider" > About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#team">Team</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class="slider_section " >
+      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-6 ">
+                  <div class="detail-box">
+                    <h1>
+                      YOU <br>
+                      SAFE
+                    </h1>
+                    <p>
+                      Model detects fainting cases and  triggers instant alerts for quick intervention                 <div class="btn-box">
+                      <a href="{% url 'main:about_view' %}" class="btn1">
+                        Demo
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="img-box">
+                    <img src="{%static 'images/cam2-removebg-preview.png' %}" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item ">
+            <div class=" container ">
+              <div class="row">
+                <div class="col-md-6 ">
+                  <div class="detail-box">
+                    <h1>
+                      You <br>
+                      Safe
+                    </h1>
+                    <p>
+                      Surveillance cameras are connected to the system, enabling advanced image analysis to detect fainting cases                 </p>
+                    <div class="btn-box">
+                      <a href="{% url 'main:about_view' %}" class="btn1">
+                        Demo
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="img-box">
+                    <img src="{%static 'images/cam2-removebg-preview.png' %}" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container ">
+              <div class="row">
+                <div class="col-md-6 ">
+                  <div class="detail-box">
+                    <h1>
+                      you <br>
+                      safe
+                    </h1>
+                    <p>
+                      contributing to enhancing public safety and improving emergency response                   </p>
+                    <div class="btn-box">
+                      <a href="{% url 'main:about_view' %}" class="btn1">
+                        Demo
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="img-box">
+                    <img src="{%static 'images/cam2-removebg-preview.png' %}" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ol class="carousel-indicators">
+          <li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
+          <li data-target="#customCarousel1" data-slide-to="1"></li>
+          <li data-target="#customCarousel1" data-slide-to="2"></li>
+        </ol>
+      </div>
+
+    </section>
+    <!-- end slider section -->
+  </div>
+
+
+  <!-- service section -->
+
+  <section class="service_section layout_padding">
+    <div class="service_container">
+      <div class="container " >
+        <div class="heading_container heading_center" id="slider">
+          <h2 >
+            <span> What is USafe ?</span>
+          </h2>
+          <p>
+            USafe project is to develop a device capable of detecting cases of fainting using a camera and alerting the surrounding individuals by triggering an alarm bell
+          </p>
+        </div>
+        <div class="row">
+          <div class="col-md-4 ">
+            <div class="box " >
+              <div class="img-box">
+                <img src="{%static 'images/detect.jpg' %}" alt="">
+              </div>
+              <div class="detail-box" >
+                <h5>
+                  Video-based Detection
+                </h5>
+                <p>
+                  Develop a deep learning model for automatic detection of fainting cases by analyzing the video stream from the camera
+                </p>
+              
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{%static 'images/s2.png' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Enhanced Accuracy
+                </h5>
+                <p>
+                  Improve the accuracy of fainting detection by training the model on a wide range of possible fainting scenarios
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 ">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{%static 'images/alarm.jpg' %}" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+              Automated Alarm
+                </h5>
+                <p>
+                  Design and develop an alarm bell activation system that is automatically triggered upon detecting a fainting case
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <!--Section: Content-->
+          <section>
+              <div class="row d-flex">
+                          <img class="col-6 pt-5 mt-5" src="{%static 'images/our logo.png' %}"/>
+                          
+                          <img class="col-4 pt-5 mt-5" src="{%static 'images/b.png' %}"/>
+                      </div>
+                  </div>
+  
+        <div class="btn-box" >
+            <a href="{% url 'main:webcam' %}">Get Started</a>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end service section -->
+
+  <!-- team section -->
+  <section class="team_section layout_padding" id="team">
+    <div class="container-fluid" >
+      <div class="heading_container heading_center" >
+        <h2 >
+          Our <span> Team</span>
+        </h2>
+      </div>
+
+      <div class="team_container pt-5 mt-5">
+        <div class="row">
+          <div class="col-lg-4 col-sm-4">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{%static 'images/d3.png' %}" class="img1" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Dalal Alharbi
+                </h5>
+                <p>
+                  Data Scientist
+                </p>
+                Computer Science            </p>
+              </p>
+              Web developer            </p>
+
+              </div>
+              <div class="social_box">
+                <a href="#">
+                  <i class="fa fa-facebook" aria-hidden="true"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-linkedin" aria-hidden="true"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-4">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{%static 'images/N1.png' %}" class="img1" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Nada Almutairi
+                </h5>
+                <p>
+                  Data Scientist                </p>
+
+computational and Applied Mathematics                </p>
+Full Stack developer                </p>
+
+              </div>
+              <div class="social_box">
+                <a href="#">
+                  <i class="fa fa-facebook" aria-hidden="true"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+                <a href= 
+                "https://www.linkedin.com/in/nada-almutairi-a8b66813a/">
+                  <i class="fa fa-linkedin" aria-hidden="true"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-4">
+            <div class="box ">
+              <div class="img-box">
+                <img src="{%static 'images/r4.jpeg' %}" class="img1" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  Refal Alboqami
+                </h5>
+                <p>
+                  Data Scientist
+                </p>
+                Computer Science            </p>
+                Paramedic            </p>
+
+
+              </div>
+              <div class="social_box">
+                <a href="#">
+                  <i class="fa fa-facebook" aria-hidden="true"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-linkedin" aria-hidden="true"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="#">
+                  <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end team section -->
+
+
+  <!-- client section -->
+
+  <section class="client_section layout_padding pt-5 mt-5">
+    <div class="container">
+      <div class="heading_container heading_center psudo_white_primary mb_45">
+        <h2>
+        <span>Usages</span>
+        </h2>
+      </div>
+      <div class="carousel-wrap ">
+        <div class="owl-carousel client_owl-carousel">
+          <div class="item">
+            <div class="box">
+              <div class="img-box">
+                <img src="{%static 'images/yolo.jpg' %}" alt="" class="box-img">
+              </div>
+              <div class="detail-box">
+                <div class="client_id">
+                  <div class="client_info">
+                    <h6>
+                      YOLOv8
+                    </h6>
+                 
+                  </div>
+                  <i class="fa fa-quote-left" aria-hidden="true"></i>
+                </div>
+                <p>
+                  YOLOv8 is a new state-of-the-art computer vision model built by Ultralytics, the creators of YOLOv5. The YOLOv8 model contains out-of-the-box support for object detection, classification, and segmentation tasks, accessible through a Python package as well as a command line interface </p>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="box">
+              <div class="img-box">
+                <img src="{%static 'images/robo.jpg' %}" alt="" class="box-img">
+              </div>
+              <div class="detail-box">
+                <div class="client_id">
+                  <div class="client_info">
+                    <h6>
+                      Roboflow
+                    </h6>
+                 
+                  </div>
+                  <i class="fa fa-quote-left" aria-hidden="true"></i>
+                </div>
+                <p>
+                  Use Roboflow Datasets to upload, organize, collaborate, label, augment, and process your dataset. After that, we can simplify the process of training with Roboflow Train and accelerate deployment with our many deployment options using Roboflow Deploy </p>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="box">
+              <div class="img-box">
+                <img src="{%static 'images/Gram.jpg' %}" alt="" class="box-img">
+              </div>
+              <div class="detail-box">
+                <div class="client_id">
+                  <div class="client_info">
+                    <h6>
+                      GRAM website
+                    </h6>
+              
+                  </div>
+                  <i class="fa fa-quote-left" aria-hidden="true"></i>
+                </div>
+                <p>
+                  FPDS dataset from GRAM website: The website "gram.web.uah.es"  represents the Robotics, Automation, and Mechatronics Group at the University of Alcalá in Spain, offering information on their research, projects, and expertise in robotics, automation, and mechatronics fields, providing insights into academic work and potential collaboration opportunities</p>
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <div class="box">
+              <div class="img-box">
+                <img src="{%static 'images/Kaggle.jpg' %}" alt="" class="box-img">
+              </div>
+              <div class="detail-box">
+                <div class="client_id">
+                  <div class="client_info">
+                    <h6>
+                      Kaggle
+                    </h6>
+                 
+                  </div>
+                  <i class="fa fa-quote-left" aria-hidden="true"></i>
+                </div>
+                <p>
+                  Human Detection Dataset/ Human action Recognition dataset from Kaggle: Kaggle is a platform for data science enthusiasts and professionals, offering datasets, competitions, and a collaborative environment for machine learning and analytics, fostering learning, skill development, and innovation in data-driven fields   </p>          </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end client section -->
+
+
+  <!-- info section -->
+
+  <section class="info_section layout_padding2 pt-5 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 col-lg-6 info_col">
+          <div class="info_contact">
+            <h4>
+              Address
+            </h4>
+            <div class="contact_link_box">
+              <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>
+                  Riyadh
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>
+                  Call +966 557141552
+                </span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span>
+                  usafe.detection@gmail.com                </span>
+              </a>
+            </div>
+          </div>
+          <div class="info_social">
+            <a href="">
+              <i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+            <a href="">
+              <i class="fa fa-instagram" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-6 info_col ">
+          <h4>
+            Subscribe
+          </h4>
+          <form action="#">
+            <input type="text" placeholder="Enter email" />
+            <button type="submit">
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info section -->
+
+  <!-- footer section -->
+  <section class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="https://html.design/">USafe copyright</a>
+      </p>
+    </div>
+  </section>
+  <!-- footer section -->
+
+  <!-- jQery -->
+  <script type="text/javascript" src="{%static 'js/jquery-3.4.1.min.js' %}"></script>
+  <!-- popper js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
+  <!-- bootstrap js -->
+  <script type="text/javascript" src="{%static 'js/bootstrap.js' %}"></script>
+  <!-- owl slider -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <!-- custom js -->
+  <script type="text/javascript" src="{%static 'js/custom.js' %}"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
+  </script>
+  <!-- End Google Map -->
+
+</body>
+
+</html>

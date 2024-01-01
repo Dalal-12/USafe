@@ -1,0 +1,30 @@
+
+<div class="video-container">
+  <video autoplay>
+    <source src="/static/video/pred1.mp4" type="video/mp4">
+  </video>
+</div>
+
+<style>
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .video-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+  }
+</style>
