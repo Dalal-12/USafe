@@ -42,8 +42,3 @@ YOLOv8: We employed the YOLOv8 model, which is a cutting-edge object detection a
 
 - Customized Training: We meticulously customized and fine-tuned the YOLOv8 model to achieve high accuracy and robustness in detecting fainting cases across various environments.
 
-### Key Contributions:
--	Developed a custom YOLOv8 model for fainting detection.
--	Integrated the model into a web application using Django framework.
--	Implemented real-time alerts upon detection of fainting instances.
--	Ensured user-friendly interface and smooth functionality.
