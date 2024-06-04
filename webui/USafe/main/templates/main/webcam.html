@@ -5,9 +5,7 @@
   <meta charset="UTF-8">
   <title>Webcam Video Stream</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  
 </head>
-
 <body>
 
   <div class="container">
@@ -15,42 +13,29 @@
     <div class="row">
       <div class="col-8">
         <video id="videoElement" autoplay class="w-100"></video>
-
       </div>
       <div class="col">
-
         <div id="message" class="d-none">
           <!-- start for FAINT DECTECT -->
-
           <h3 class="text-danger"> Faint Detected !!</h3>
           <div class="alert alert-danger" role="alert">
             Fainting Case Detected!
           </div>
-
           <!-- end -->
         </div>
-
         <div id="message-ok" class="d-block">
           <!-- start for OK -->
-
           <h3 class="text-green"> Everything is OK</h3>
           <div class="alert alert-success" role="alert">
             All Things is OK 
           </div>
-
           <!-- end -->
         </div>
-
       </div>
     </div>
   </div>
   
-  
-
   <canvas id="canvas" style="visibility:hidden;"> </canvas>
-
-
-
 
   <!-- <audio style="visibility: hidden;" id="sound">
     <source src="/static/alarm.mp3" type="audio/mpeg">
@@ -59,8 +44,6 @@
 
   {% csrf_token %}
   <script>
-
-
 
     document.addEventListener('DOMContentLoaded', () => {
 
@@ -74,7 +57,6 @@
 
       canvas = document.getElementById('canvas');
       const video = document.getElementById('videoElement');
-
 
       // video.setAttribute("width", width);
       // video.setAttribute("height", height);
